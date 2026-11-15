@@ -1,9 +1,0 @@
-com\dodaso\ecosystem\perf\incident\PerfIncidentWriterTest.class
-com\dodaso\ecosystem\perf\CallTrackerTest.class
-com\dodaso\ecosystem\perf\PerfMonitorAspectTest.class
-com\dodaso\ecosystem\perf\PerfMonitorAspectTest$Svc.class
-com\dodaso\ecosystem\perf\LoggingPerfReporterTest.class
-com\dodaso\ecosystem\perf\PerfMonitorAspectTest$Job.class
-com\dodaso\ecosystem\perf\PerfPropertiesTest.class
-com\dodaso\ecosystem\perf\PerfMonitorAspectTest$Dao.class
-com\dodaso\ecosystem\perf\PerfNamesTest.class
