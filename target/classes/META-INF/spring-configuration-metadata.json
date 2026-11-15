@@ -1,0 +1,231 @@
+{
+  "groups": [
+    {
+      "name": "dodaso.perf",
+      "type": "com.dodaso.ecosystem.perf.PerfProperties",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties"
+    },
+    {
+      "name": "dodaso.perf.store",
+      "type": "com.dodaso.ecosystem.perf.PerfProperties$Store",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "sourceMethod": "getStore()"
+    },
+    {
+      "name": "dodaso.perf.watchdog",
+      "type": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "sourceMethod": "getWatchdog()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dodaso.perf.controllers",
+      "type": "java.lang.Boolean",
+      "description": "Layers to watch.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.cpu-threshold-ms",
+      "type": "java.lang.Long",
+      "description": "Own CPU time (ms) at which any call is reported.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": 1000
+    },
+    {
+      "name": "dodaso.perf.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Master switch.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "dodaso.perf.entry-threshold-ms",
+      "type": "java.lang.Long",
+      "description": "Total time (ms) at which an outermost call (a whole request) is reported.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": 5000
+    },
+    {
+      "name": "dodaso.perf.ignored-paths",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Request paths that are never timed (prefix match), such as static resources.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties"
+    },
+    {
+      "name": "dodaso.perf.metrics-enabled",
+      "type": "java.lang.Boolean",
+      "description": "Record Micrometer timers when a MeterRegistry is present.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.overrides",
+      "type": "java.util.Map<java.lang.String,java.lang.Long>",
+      "description": "Per class or per class.method own-time limits in ms, for example {@code ContractService.save}.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties"
+    },
+    {
+      "name": "dodaso.perf.repositories",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.repository-wall-threshold-ms",
+      "type": "java.lang.Long",
+      "description": "Own wall-clock time (ms) at which a repository call is reported.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": 1000
+    },
+    {
+      "name": "dodaso.perf.requests",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.rest-clients",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.rest-wall-threshold-ms",
+      "type": "java.lang.Long",
+      "description": "Own wall-clock time (ms) at which a call to another service is reported.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": 2000
+    },
+    {
+      "name": "dodaso.perf.services",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.store.batch-size",
+      "type": "java.lang.Integer",
+      "description": "Most incidents sent in one call.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Store",
+      "defaultValue": 50
+    },
+    {
+      "name": "dodaso.perf.store.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Send incidents to the common service for the admin page. Needs RESTServiceClient.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Store",
+      "defaultValue": false
+    },
+    {
+      "name": "dodaso.perf.store.flush-interval-ms",
+      "type": "java.lang.Long",
+      "description": "The writer sends what it has at least this often, in ms.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Store",
+      "defaultValue": 5000
+    },
+    {
+      "name": "dodaso.perf.store.include-stack",
+      "type": "java.lang.Boolean",
+      "description": "Keep the stack text of STILL_RUNNING and HIGH_CPU incidents.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Store",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.store.max-stack-chars",
+      "type": "java.lang.Integer",
+      "description": "Longest stack text kept, in characters.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Store",
+      "defaultValue": 6000
+    },
+    {
+      "name": "dodaso.perf.store.queue-size",
+      "type": "java.lang.Integer",
+      "description": "Most incidents waiting to be sent. Newer ones are dropped when the queue is full.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Store",
+      "defaultValue": 2000
+    },
+    {
+      "name": "dodaso.perf.store.service-name",
+      "type": "java.lang.String",
+      "description": "Name written on each incident; empty means spring.application.name.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Store",
+      "defaultValue": ""
+    },
+    {
+      "name": "dodaso.perf.ui-beans",
+      "type": "java.lang.Boolean",
+      "description": "Watch JSF bean actions, calls to other services, and whole requests.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.wall-threshold-ms",
+      "type": "java.lang.Long",
+      "description": "Own wall-clock time (ms) at which a controller or service call is reported.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties",
+      "defaultValue": 3000
+    },
+    {
+      "name": "dodaso.perf.watchdog.cpu-load-threshold",
+      "type": "java.lang.Double",
+      "description": "Process CPU load (0 to 1) at or above which the busiest threads are reported.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "defaultValue": 0.85
+    },
+    {
+      "name": "dodaso.perf.watchdog.cpu-report-every-ms",
+      "type": "java.lang.Long",
+      "description": "Busy thread reports are at least this many ms apart.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "defaultValue": 30000
+    },
+    {
+      "name": "dodaso.perf.watchdog.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Watch calls that are still running, and busy threads when the process CPU is high.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "defaultValue": true
+    },
+    {
+      "name": "dodaso.perf.watchdog.interval-ms",
+      "type": "java.lang.Long",
+      "description": "How often the watchdog looks, in ms.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "defaultValue": 2000
+    },
+    {
+      "name": "dodaso.perf.watchdog.repeat-ms",
+      "type": "java.lang.Long",
+      "description": "The same running call is reported again only after this many ms.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "defaultValue": 30000
+    },
+    {
+      "name": "dodaso.perf.watchdog.stack-depth",
+      "type": "java.lang.Integer",
+      "description": "Stack frames shown per thread.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "defaultValue": 15
+    },
+    {
+      "name": "dodaso.perf.watchdog.stuck-threshold-ms",
+      "type": "java.lang.Long",
+      "description": "A monitored call still running after this many ms is reported with its stack.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "defaultValue": 10000
+    },
+    {
+      "name": "dodaso.perf.watchdog.top-threads",
+      "type": "java.lang.Integer",
+      "description": "Number of busiest threads in one report.",
+      "sourceType": "com.dodaso.ecosystem.perf.PerfProperties$Watchdog",
+      "defaultValue": 5
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}
